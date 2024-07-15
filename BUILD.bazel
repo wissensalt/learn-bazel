@@ -1,5 +1,25 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/wissensalt/learn-bazel
-
+# gazelle : exclude build
+# gazelle : prefix github.com/wissensalt/learn-bazel
 gazelle(name = "gazelle")
+
+gazelle(
+    name = "gazelle-update-repo-one",
+    args = [
+        "-from_file=./apps/app-one/go.mod",
+        "-to_macro=deps.bzl%go_dependencies",
+        "-prune",
+    ],
+    command = "update-repos",
+)
+
+gazelle(
+    name = "gazelle-update-repo-two",
+    args = [
+        "-from_file=./apps/app-two/go.mod",
+        "-to_macro=deps.bzl%go_dependencies",
+        "-prune",
+    ],
+    command = "update-repos",
+)

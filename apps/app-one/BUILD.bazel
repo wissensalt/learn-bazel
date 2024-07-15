@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/wissensalt/learn-bazel/apps/app-one
+
+gazelle(name = "gazelle")
+
+go_library(
+    name = "app-one_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/wissensalt/learn-bazel/apps/app-one",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "app-one",
+    embed = [":app-one_lib"],
+    visibility = ["//visibility:public"],
+)
