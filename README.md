@@ -1,4 +1,8 @@
 # learn-bazel
+
+## Repository Archived
+Repository moved to https://github.com/wissensalt/golang-bazel-monorepo
+
 This project is a tutorial on using Bazel for building and managing Go projects. It provides step-by-step instructions on installing the necessary dependencies, such as Golang, Bazel, Bazelisk, and Gazelle. The README also includes commands for building and running the binary for different applications within the project. Additionally, it recommends installing Go Version Manager for managing different versions of Go. The tutorial aims to help developers understand and utilize Bazel effectively in their Go projects.
 
 ## Deps:
